@@ -1,0 +1,95 @@
+@use "../../scss/" as *;
+
+.slide-item-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: row-reverse;
+
+    @include tablet {
+        flex-direction: column-reverse;
+        min-height: 850px;
+    }
+
+    @include mobile {
+        flex-direction: column-reverse;
+        min-height: 600px;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        @include overlay();
+    }
+
+    .movie-info {
+        flex: 1;
+        z-index: 1;
+        color: white;
+        padding: 20rem 7rem 0;
+
+        h2 {
+            font-size: 4rem;
+            font-weight: bold;
+        }
+
+        p {
+            font-size: 1.2rem;
+            padding-right: 1rem;
+        }
+
+        @include tablet {
+            padding: 2rem 4rem;
+        }
+
+        @include mobile {
+            padding: 14rem 4rem 0;
+
+            h2 {
+                font-size: 3rem;
+            }
+
+            p {
+                margin-top: 3rem;
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    .movie-poster {
+        max-height: 500px;
+        margin-top: 20rem;
+        margin-left: 10rem;
+        animation: float 6s ease-in-out infinite;
+        border-radius: 20px;
+
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        @include tablet {
+            img {
+                max-height: 400px;
+            }
+            margin-top: 10rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @include mobile {
+            display: none;
+        }
+    }
+}
