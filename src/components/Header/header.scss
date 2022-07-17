@@ -10,7 +10,7 @@
     transition: height 0.3s ease, background-color 0.3s ease;
     &.bg-blured {
         height: $header-shrink-height;
-        @include overlay;
+        @include overlay(0.5, 8px);
     }
 
     .container {
@@ -85,7 +85,7 @@
 
         @include mobile {
             width: 30px;
-            margin-right: 0;
+            margin-right: 4px;
         }
     }
 }

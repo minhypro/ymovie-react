@@ -1,0 +1,43 @@
+@use "../../scss/" as *;
+
+.card {
+    display: flex;
+    flex-direction: column;
+    &-img {
+        position: relative;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &::before {
+            content: "Details";
+            position: absolute;
+            text-align: center;
+            padding-top: 60%;
+            font-size: 1.6rem;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-color: $black;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border-radius: $border-radius;
+        }
+
+        img {
+            border-radius: $border-radius;
+            aspect-ratio: 0.7;
+            object-fit: cover;
+        }
+    }
+    &:hover &-img::before {
+        opacity: 0.8;
+    }
+
+    .card-title {
+        margin-top: 10px;
+        text-align: center;
+    }
+}

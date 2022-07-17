@@ -1,0 +1,43 @@
+@use "../../scss/" as *;
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css");
+
+footer {
+    margin-top: 2rem;
+    @include flex(center, space-between);
+    .footer_logo {
+        font-size: 1.3rem;
+        font-weight: 600;
+        @include flex(center, unset);
+
+        a {
+            @include flex(center, unset);
+        }
+
+        img {
+            margin-right: 10px;
+            width: 50px;
+
+            @include mobile {
+                width: 30px;
+                margin-right: 4px;
+            }
+        }
+    }
+
+    ul {
+        @include flex(center, space-between);
+
+        font-size: 1.4rem;
+
+        li:not(:last-child) {
+            margin-right: 2rem;
+        }
+    }
+
+    @include mobile {
+        flex-direction: column;
+        .footer_logo {
+            margin-bottom: 10px;
+        }
+    }
+}

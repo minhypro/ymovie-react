@@ -27,6 +27,10 @@ export const tvType = {
 }
 
 const tmdbApi = {
+    getGenre: (type, params) => {
+        const url = 'genre/' + type + '/list'
+        return axiosClient.get(url, params)
+    },
     getTrending: (type, time, params) => {
         const url = 'trending/' + type + '/' + time
         return axiosClient.get(url, params)
@@ -58,6 +62,10 @@ const tmdbApi = {
     similar: (cate, id) => {
         const url = category[cate] + '/' + id + '/similar';
         return axiosClient.get(url, { params: {} });
+    },
+    discover: (type, params) => {
+        const url = 'discover/' + type
+        return axiosClient.get(url, params)
     },
 }
 

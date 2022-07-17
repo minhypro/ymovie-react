@@ -1,12 +1,10 @@
 import { useState, useEffect } from 'react'
 import { Swiper, SwiperSlide } from "swiper/react"
 
-import tmdbApi, { category } from '../../api/moviesApi'
-import apiConfig from "../../api/apiConfig";
-import './movieList.scss'
-import Button from "../Button/Button"
 
-const { w500Image } = { ...apiConfig }
+import MovieCard from '../MovieCard/MovieCard'
+import tmdbApi, { category } from '../../api/moviesApi'
+import './movieList.scss'
 
 function MovieList(props) {
     let [movies, setMovies] = useState([])
@@ -35,13 +33,13 @@ function MovieList(props) {
             setMovies(response.results);
         }
         getList()
-    }, []);
+
+    }, [props.category, props.id, props.type]);
 
     return (
         <div className="movie-list">
             <Swiper
                 grabCursor={true}
-                // spaceBetween={40}
                 slidesPerView={2.5}
                 spaceBetween={20}
                 breakpoints={{
@@ -59,28 +57,11 @@ function MovieList(props) {
                 {
                     movies.map((movie, i) => (
                         <SwiperSlide key={i}>
-                            <Movie {...movie} category={props.category} />
+                            <MovieCard {...movie} category={props.category} />
                         </SwiperSlide>
                     ))
                 }
             </Swiper>
-        </div>
-    );
-}
-
-function Movie({ title, name, poster_path, backdrop_path, overview }) {
-    const movieTitle = title || name
-
-    return (
-        <div className="card" >
-            <img src={w500Image(poster_path || backdrop_path)} alt={movieTitle} className="" />
-            <div className="card-body">
-                <h3 className="card-title">{movieTitle}</h3>
-                <p className="card-text">{overview}</p>
-                <Button
-                    className="small"
-                >Details</Button>
-            </div>
         </div>
     );
 }

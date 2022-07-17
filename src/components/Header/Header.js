@@ -1,6 +1,7 @@
 import { Link, useLocation } from 'react-router-dom'
 import { useRef, useEffect } from 'react'
 import './header.scss'
+import logo from '../../assets/movie-logo.png'
 
 const headerNav = [
     {
@@ -41,7 +42,7 @@ function HeaderContent() {
         <div ref={headerRef} id="header">
             <div className="container">
                 <Link className="header_logo" to="/">
-                    <img src="movie-logo.png" alt="Movie App" />
+                    <img src={logo} alt="Movie App" />
                     <span>Ymovie</span>
                 </Link>
 

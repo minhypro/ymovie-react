@@ -1,0 +1,25 @@
+@use "../../scss/variables" as *;
+
+.page-header {
+    padding: $header-height 0 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+
+    position: relative;
+
+    background-position: center center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background: rgb(12, 19, 42);
+    background: linear-gradient(
+        0deg,
+        rgba(12, 19, 42, 1) 0%,
+        rgba(50, 164, 200, 1) 100%
+    );
+
+    h2 {
+        position: relative;
+        z-index: 99;
+        text-transform: uppercase;
+    }
+}

@@ -1,14 +1,1 @@
 @use "../../scss/" as *;
-
-.movie_swiper {
-    position: relative;
-}
-
-.card {
-    display: flex;
-    flex-direction: column;
-
-    p {
-        @include text-truncate(4);
-    }
-}
