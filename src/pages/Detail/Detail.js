@@ -9,7 +9,6 @@ import CastList from './CastList';
 import VideoList from './VideoList';
 
 import MovieList from '../../components/MoviesList/MovieList';
-import noImage from '../../assets/no-image.jpg'
 
 const Detail = () => {
 
