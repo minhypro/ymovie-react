@@ -1,6 +1,6 @@
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
-import Routes from './config/Routes'
+import Routes from './config/routes'
 import './App.scss'
 
 function App() {
