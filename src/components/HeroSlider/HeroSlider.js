@@ -70,7 +70,8 @@ function HeroSlider() {
 
 function Slide({ props }) {
     const { backdrop_path, title, name, overview, poster_path, isActive, genre_ids, movieGenre, media_type, id } = props
-    const link = '/' + media_type + '/id/' + id
+    const detailLink = '/' + media_type + '/id/' + id
+    const watchLink = detailLink + '/watch'
 
     return (
         <div
@@ -102,8 +103,11 @@ function Slide({ props }) {
 
                     }
                 </div>
-                <Link to={link}>
+                <Link to={detailLink}>
                     <OutlineButton>Details</OutlineButton>
+                </Link>
+                <Link to={watchLink}>
+                    <OutlineButton>Watch Now</OutlineButton>
                 </Link>
             </div>
             <div className="movie-poster">

@@ -16,9 +16,9 @@ function MovieCard({ title, name, poster_path, backdrop_path, id, category }) {
         imgSource = w500Image(poster_path || backdrop_path)
     }
 
-    const link = '/' + category + '/id/' + id;
+    const detailLink = '/' + category + '/id/' + id;
     return (
-        <Link to={link} className="card">
+        <Link to={detailLink} className="card">
             <div className="card-img">
                 <img
                     src={imgSource}

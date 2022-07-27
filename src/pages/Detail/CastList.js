@@ -30,8 +30,6 @@ const CastList = props => {
                         castImage = apiConfig.w500Image(item.profile_path)
                     }
 
-                    console.log(item.profile_path);
-
                     return (
                         <div key={i} className="casts__item">
                             <div className="casts__item__img" style={{ backgroundImage: `url(${castImage})` }}></div>
