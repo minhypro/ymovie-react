@@ -1,4 +1,4 @@
-Live link: https://minhypro.github.io/y-react-movie/
+Live link: https://62e15373b6e64727675684d9--cozy-starlight-bd6a7d.netlify.app/
 
 # Getting Started with Create React App
 
